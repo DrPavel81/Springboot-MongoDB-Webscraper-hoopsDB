@@ -87,25 +87,21 @@ public class Score {
 
   @Override
   public String toString() {
-    return "Score{" +
-        "id='" + id + '\'' +
-        ", homeTeam='" + homeTeam + '\'' +
-        ", awayTeam='" + awayTeam + '\'' +
-        ", homeScore=" + homeScore +
-        ", awayScore=" + awayScore +
-        ", gameDate=" + Instant.ofEpochMilli(gameDate).atZone(ZoneId.of("UTC")).toLocalDate() +
-        '}';
+    return "Score{" + "id='" + id + '\'' + ", homeTeam='" + homeTeam + '\'' + ", awayTeam='" + awayTeam + '\'' +
+        ", homeScore=" + homeScore + ", awayScore=" + awayScore + ", gameDate=" +
+        Instant.ofEpochMilli(gameDate).atZone(ZoneId.of("UTC")).toLocalDate() + '}';
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     Score score = (Score) o;
-    return homeScore == score.homeScore &&
-        awayScore == score.awayScore &&
-        Objects.equals(homeTeam, score.homeTeam) &&
-        Objects.equals(awayTeam, score.awayTeam) &&
-        Objects.equals(gameDate, score.gameDate);
+    return homeScore == score.homeScore && awayScore == score.awayScore && Objects.equals(homeTeam, score.homeTeam) &&
+        Objects.equals(awayTeam, score.awayTeam) && Objects.equals(gameDate, score.gameDate);
   }
 }
